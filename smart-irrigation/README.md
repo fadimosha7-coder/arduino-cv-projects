@@ -1,19 +1,24 @@
 # Smart Irrigation System
 
-An automated irrigation system using Arduino and a soil moisture sensor to optimize water usage.
+University semester project, presented at a university exhibition.
+
+An Arduino-based controller that waters soil automatically using a moisture sensor.
 
 ## Components
 
-- Arduino Board
-- Soil Moisture Sensor
-- Water Pump
-- Relay Module
-- Battery / Power Supply
+- Arduino UNO
+- Soil moisture sensor
+- Relay module and water pump
+- Battery
 
 ## Wiring
 
-See the [wiring diagram](docs/wiring.png) for connection details.
+![wiring](docs/wiring.jpg)
 
 ## How it works
 
-The system reads the soil moisture level. If the moisture drops below a specific threshold (dry soil), it activates the water pump. Once the soil reaches the desired moisture level, the pump turns off.
+The system reads the soil moisture level. When it drops below the dry threshold (30%), the relay turns the pump on. When the soil reaches the target level (80%), the pump turns off. Both values are set at the top of `irrigation.ino`.
+
+## Limits
+
+No machine learning. Thresholds were calibrated for garden soil. Not tested outdoors for long periods.
